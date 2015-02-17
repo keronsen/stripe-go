@@ -43,6 +43,10 @@ func (c Client) New(params *stripe.InvoiceParams) (*stripe.Invoice, error) {
 		body.Add("subscription", params.Sub)
 	}
 
+	if params.TaxPercent > 0 {
+		body.Add("tax_percent", strconv.FormatUint(params.TaxPercent, 10))
+	}
+
 	params.AppendTo(body)
 
 	token := c.Key

@@ -12,7 +12,7 @@ type InvoiceParams struct {
 	Params
 	Customer             string
 	Desc, Statement, Sub string
-	Fee                  uint64
+	Fee, TaxPercent      uint64
 	Closed, Forgive      bool
 }
 
